@@ -567,26 +567,21 @@ footer p{
 }
 
 .booking-wrapper{
-
     display:grid;
-
-    grid-template-columns:350px 1fr;
-
-    gap:50px;
-
+    grid-template-columns:2fr 1fr;
+    gap:40px;
+    align-items:start;
 }
 
+.booking-form,
 .booking-info{
-
     background:#210B2C;
-
-    color:#fff;
-
-    padding:40px;
-
+    padding:35px;
     border-radius:20px;
-
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
+
+
 
 .booking-info h3{
 

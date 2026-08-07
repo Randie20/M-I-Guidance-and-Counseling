@@ -48,11 +48,7 @@
 
         </nav>
 
-        <button class="book-btn">
-
-            Book Now
-
-        </button>
+        <a href="#booking" class="primary-btn">Book Now</a>
 
         <div class="menu-btn">
 
@@ -319,9 +315,11 @@ Learn More
 
 </section>
 
-<!-- ================= BOOKING ================= -->
+<!-- ===========================
+     BOOKING SECTION
+=========================== -->
 
-<section id="booking" class="booking">
+<section class="booking section" id="booking">
 
     <div class="container">
 
@@ -333,51 +331,15 @@ Learn More
 
             <p>
                 Complete the form below to request a confidential Zoom counseling
-                session. We'll review your request and contact you with confirmation
-                and Zoom meeting details.
+                session. Once your request is received, we will contact you via
+                email with confirmation and your Zoom meeting details.
             </p>
 
         </div>
 
         <div class="booking-wrapper">
 
-            <div class="booking-info">
-
-                <h3>Session Information</h3>
-
-                <div class="booking-item">
-                    <i class="fa-solid fa-video"></i>
-                    <div>
-                        <h4>Session Format</h4>
-                        <p>Online via Zoom</p>
-                    </div>
-                </div>
-
-                <div class="booking-item">
-                    <i class="fa-solid fa-clock"></i>
-                    <div>
-                        <h4>Duration</h4>
-                        <p>Approximately 45–90 Minutes</p>
-                    </div>
-                </div>
-
-                <div class="booking-item">
-                    <i class="fa-solid fa-lock"></i>
-                    <div>
-                        <h4>Confidential</h4>
-                        <p>Your information is handled with care and confidentiality.</p>
-                    </div>
-                </div>
-
-                <div class="booking-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <div>
-                        <h4>Email</h4>
-                        <p>muangemaina22@gmail.com</p>
-                    </div>
-                </div>
-
-            </div>
+            <!-- Booking Form -->
 
             <div class="booking-form">
 
@@ -385,11 +347,22 @@ Learn More
                     name="therapy-booking"
                     method="POST"
                     data-netlify="true"
-                    action="thank-you.html"
-                >
+                    netlify-honeypot="bot-field"
+                    action="thank-you.html">
 
-                    <!-- Required for Netlify -->
-                    <input type="hidden" name="form-name" value="therapy-booking">
+                    <input
+                        type="hidden"
+                        name="form-name"
+                        value="therapy-booking">
+
+                    <p hidden>
+                        <label>
+                            Don't fill this out:
+                            <input name="bot-field">
+                        </label>
+                    </p>
+
+                    <h3>Personal Information</h3>
 
                     <div class="form-row">
 
@@ -400,8 +373,8 @@ Learn More
                             <input
                                 type="text"
                                 name="name"
-                                required
-                            >
+                                placeholder="Enter your full name"
+                                required>
 
                         </div>
 
@@ -412,8 +385,8 @@ Learn More
                             <input
                                 type="email"
                                 name="email"
-                                required
-                            >
+                                placeholder="Enter your email"
+                                required>
 
                         </div>
 
@@ -428,10 +401,38 @@ Learn More
                             <input
                                 type="tel"
                                 name="phone"
-                                required
-                            >
+                                placeholder="+254..."
+                                required>
 
                         </div>
+
+                        <div class="form-group">
+
+                            <label>Session Type</label>
+
+                            <select name="session" required>
+
+                                <option value="">Choose session type</option>
+
+                                <option>Individual Counseling</option>
+
+                                <option>Marriage Counseling</option>
+
+                                <option>Family Counseling</option>
+
+                                <option>Youth Counseling</option>
+
+                                <option>Spiritual Guidance</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <h3>Appointment Details</h3>
+
+                    <div class="form-row">
 
                         <div class="form-group">
 
@@ -440,8 +441,18 @@ Learn More
                             <input
                                 type="date"
                                 name="date"
-                                required
-                            >
+                                required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Preferred Time</label>
+
+                            <input
+                                type="time"
+                                name="time"
+                                required>
 
                         </div>
 
@@ -449,83 +460,138 @@ Learn More
 
                     <div class="form-group">
 
-                        <label>Preferred Time</label>
-
-                        <input
-                            type="time"
-                            name="time"
-                            required
-                        >
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Reason for Session</label>
-
-                        <select
-                            name="reason"
-                            required
-                        >
-
-                            <option value="">Select One</option>
-
-                            <option>Personal Guidance</option>
-
-                            <option>Stress Support</option>
-
-                            <option>Relationship Guidance</option>
-
-                            <option>Family Guidance</option>
-
-                            <option>Youth Mentorship</option>
-
-                            <option>Spiritual Guidance</option>
-
-                            <option>Other</option>
-
-                        </select>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Remarks</label>
+                        <label>Additional Remarks</label>
 
                         <textarea
-                            rows="5"
                             name="remarks"
-                            placeholder="Share anything you'd like us to know before your session..."
-                        ></textarea>
+                            rows="5"
+                            placeholder="Tell us briefly how we can support you..."></textarea>
 
                     </div>
 
-                    <div class="checkbox-group">
+                    <div class="form-check">
 
-                        <input
-                            type="checkbox"
-                            id="agree"
-                            required
-                        >
+                        <label>
 
-                        <label for="agree">
+                            <input
+                                type="checkbox"
+                                required>
 
                             I have read and agree to the
-                            <a href="confidentiality.html">
+                            <a href="confidentiality.html" target="_blank">
                                 Confidentiality Agreement
-                            </a>
+                            </a>.
 
                         </label>
 
                     </div>
 
-                    <button type="submit" class="submit-btn">
+                    <button
+                        type="submit"
+                        class="primary-btn">
 
-                        Request a Session
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                        Request Session
 
                     </button>
 
                 </form>
+
+            </div>
+
+            <!-- Session Information -->
+
+            <div class="booking-info">
+
+                <h3>Session Information</h3>
+
+                <div class="booking-item">
+
+                    <i class="fa-solid fa-video"></i>
+
+                    <div>
+
+                        <h4>Session Format</h4>
+
+                        <p>Secure Zoom Video Meeting</p>
+
+                    </div>
+
+                </div>
+
+                <div class="booking-item">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <div>
+
+                        <h4>Duration</h4>
+
+                        <p>45–90 Minutes</p>
+
+                    </div>
+
+                </div>
+
+                <div class="booking-item">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                    <div>
+
+                        <h4>Confidential</h4>
+
+                        <p>Your privacy and personal information are fully respected.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="booking-item">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <div>
+
+                        <h4>Email</h4>
+
+                        <p>mwangemaina22@gmail.com</p>
+
+                    </div>
+
+                </div>
+
+                <div class="booking-item">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <div>
+
+                        <h4>Phone</h4>
+
+                        <p>+254 790 331 742</p>
+
+                    </div>
+
+                </div>
+
+                <div class="booking-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+
+                        <h4>Confirmation</h4>
+
+                        <p>
+                            You'll receive a confirmation email together with your
+                            Zoom meeting link after your booking has been reviewed.
+                        </p>
+
+                    </div>
+
+                </div>
 
             </div>
 

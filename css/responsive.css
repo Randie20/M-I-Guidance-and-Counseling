@@ -3,17 +3,34 @@
 =================================== */
 
 /* ===========================
-   Large Tablets
+   Large Screens
 =========================== */
 
-@media (max-width: 1024px) {
+@media (max-width:1200px){
+
+    .container{
+        width:92%;
+    }
+
+    .hero-grid{
+        gap:50px;
+    }
+
+}
+
+
+/* ===========================
+   Laptops
+=========================== */
+
+@media (max-width:1024px){
 
     h1{
         font-size:3rem;
     }
 
     h2{
-        font-size:2.2rem;
+        font-size:2.3rem;
     }
 
     .hero-grid{
@@ -24,13 +41,19 @@
         gap:20px;
     }
 
+    .services-grid,
+    .testimonial-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
 }
+
 
 /* ===========================
    Tablets
 =========================== */
 
-@media (max-width: 900px){
+@media (max-width:900px){
 
     .menu-btn{
         display:block;
@@ -44,13 +67,15 @@
 
         position:absolute;
 
-        top:85px;
+        top:80px;
         left:0;
+
         width:100%;
 
         background:#fff;
 
-        display:flex;
+        display:none;
+
         flex-direction:column;
 
         padding:25px;
@@ -59,7 +84,7 @@
 
         box-shadow:0 10px 30px rgba(0,0,0,.08);
 
-        display:none;
+        z-index:999;
 
     }
 
@@ -71,7 +96,7 @@
 
     nav a{
 
-        padding:12px 0;
+        padding:14px 0;
 
     }
 
@@ -83,27 +108,57 @@
 
     }
 
-    .hero-buttons{
+    .hero-content{
 
-        justify-content:center;
+        order:2;
 
     }
 
     .hero-image{
 
-        order:-1;
+        order:1;
 
-        margin-bottom:20px;
+        margin:auto;
+
+        max-width:450px;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+    .about-grid,
+    .therapist-grid,
+    .booking-grid,
+    .contact-grid,
+    .footer-content{
+
+        grid-template-columns:1fr;
+
+        flex-direction:column;
+
+    }
+
+    .services-grid,
+    .testimonial-grid{
+
+        grid-template-columns:1fr 1fr;
 
     }
 
 }
 
+
 /* ===========================
    Mobile
 =========================== */
 
-@media (max-width:600px){
+@media (max-width:768px){
 
     section{
 
@@ -113,13 +168,13 @@
 
     h1{
 
-        font-size:2.3rem;
+        font-size:2.4rem;
 
     }
 
     h2{
 
-        font-size:1.9rem;
+        font-size:2rem;
 
     }
 
@@ -129,11 +184,19 @@
 
     }
 
+    .section-title{
+
+        margin-bottom:45px;
+
+    }
+
     .hero-buttons{
 
         flex-direction:column;
 
         align-items:center;
+
+        gap:15px;
 
     }
 
@@ -141,7 +204,9 @@
     .secondary-btn{
 
         width:100%;
-        max-width:280px;
+
+        max-width:320px;
+
         text-align:center;
 
     }
@@ -158,19 +223,106 @@
 
     }
 
-}
-
-/* FAQ & Contact */
-
-@media(max-width:900px){
-
-    .contact-grid{
+    .services-grid,
+    .testimonial-grid{
 
         grid-template-columns:1fr;
 
     }
 
-    .footer-content{
+    .therapist-image{
+
+        max-width:350px;
+
+        margin:auto;
+
+    }
+
+}
+
+
+/* ===========================
+   Booking Form
+=========================== */
+
+@media (max-width:768px){
+
+    .booking-form{
+
+        padding:25px;
+
+    }
+
+    .form-row{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:0;
+
+    }
+
+    .form-group{
+
+        width:100%;
+
+        margin-bottom:18px;
+
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+
+        width:100%;
+
+    }
+
+    .booking-note{
+
+        font-size:.9rem;
+
+        text-align:left;
+
+    }
+
+    .booking-form button{
+
+        width:100%;
+
+    }
+
+}
+
+
+/* ===========================
+   Feedback Page
+=========================== */
+
+@media (max-width:768px){
+
+    .feedback-card{
+
+        padding:30px 20px;
+
+    }
+
+    .radio-group{
+
+        flex-direction:column;
+
+        gap:12px;
+
+    }
+
+    .rating{
+
+        justify-content:center;
+
+    }
+
+    .feedback-note{
 
         flex-direction:column;
 
@@ -178,9 +330,111 @@
 
     }
 
-    .footer-content p{
+}
 
-        margin:auto;
+
+/* ===========================
+   Success Pages
+=========================== */
+
+@media (max-width:768px){
+
+    .success-card{
+
+        padding:35px 25px;
+
+    }
+
+    .success-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .success-buttons a{
+
+        width:100%;
+
+    }
+
+}
+
+
+/* ===========================
+   Footer
+=========================== */
+
+@media (max-width:768px){
+
+    .footer-content{
+
+        text-align:center;
+
+        gap:20px;
+
+    }
+
+    .footer-links{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+}
+
+
+/* ===========================
+   Small Phones
+=========================== */
+
+@media (max-width:480px){
+
+    h1{
+
+        font-size:2rem;
+
+    }
+
+    h2{
+
+        font-size:1.7rem;
+
+    }
+
+    section{
+
+        padding:60px 0;
+
+    }
+
+    .container{
+
+        width:94%;
+
+    }
+
+    .hero-image img{
+
+        width:100%;
+
+    }
+
+    .booking-form,
+    .feedback-card,
+    .success-card{
+
+        padding:20px;
+
+        border-radius:16px;
+
+    }
+
+    .primary-btn,
+    .secondary-btn{
+
+        max-width:100%;
 
     }
 
