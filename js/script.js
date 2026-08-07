@@ -79,3 +79,26 @@ faqItems.forEach(item => {
     });
 
 });
+// =========================
+// Feedback Validation
+// =========================
+
+const feedbackForm = document.querySelector('form[name="client-feedback"]');
+
+if (feedbackForm) {
+
+    feedbackForm.addEventListener("submit", function (e) {
+
+        const rating = document.querySelector('input[name="rating"]:checked');
+
+        if (!rating) {
+
+            e.preventDefault();
+
+            alert("Please rate your overall experience before submitting your feedback.");
+
+        }
+
+    });
+
+}
