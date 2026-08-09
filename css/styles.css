@@ -582,7 +582,6 @@ footer p{
 }
 
 
-
 .booking-info h3{
 
     color:#fff;
@@ -1196,5 +1195,531 @@ SUCCESS PAGE
     gap:20px;
 
     flex-wrap:wrap;
+
+}
+/* ===================================
+   PRIVATE FEEDBACK
+=================================== */
+
+.feedback-hero{
+    background:#210B2C;
+    color:#fff;
+    padding:100px 0 80px;
+    text-align:center;
+}
+
+.feedback-intro{
+    max-width:760px;
+    margin:auto;
+}
+
+.feedback-label{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 16px;
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:50px;
+    font-size:.85rem;
+    margin-bottom:25px;
+}
+
+.feedback-intro h1{
+    font-size:3.5rem;
+    margin-bottom:20px;
+}
+
+.feedback-intro p{
+    max-width:680px;
+    margin:10px auto;
+    color:rgba(255,255,255,.82);
+    line-height:1.8;
+}
+
+.feedback-section{
+    background:#f8f6f9;
+    padding:80px 0;
+}
+
+.feedback-card{
+    max-width:900px;
+    margin:auto;
+    background:#fff;
+    padding:50px;
+    border-radius:24px;
+    box-shadow:0 20px 60px rgba(33,11,44,.10);
+}
+
+.feedback-block{
+    padding-bottom:40px;
+    margin-bottom:40px;
+    border-bottom:1px solid #eee;
+}
+
+.feedback-block-heading{
+    display:flex;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.feedback-block-heading > span{
+    width:40px;
+    height:40px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#210B2C;
+    color:#fff;
+    border-radius:50%;
+    font-size:.85rem;
+    font-weight:600;
+}
+
+.feedback-block-heading h2{
+    margin:0 0 6px;
+    font-size:1.45rem;
+}
+
+.feedback-block-heading p{
+    margin:0;
+    color:#777;
+    font-size:.92rem;
+}
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group label{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#333;
+}
+
+.form-group label span{
+    font-size:.75rem;
+    font-weight:400;
+    color:#999;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-family:inherit;
+    font-size:1rem;
+    outline:none;
+    transition:.2s ease;
+    box-sizing:border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:#210B2C;
+    box-shadow:0 0 0 3px rgba(33,11,44,.08);
+}
+
+.rating-group{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+}
+
+.rating-group input{
+    display:none;
+}
+
+.rating-group label{
+    border:1px solid #ddd;
+    border-radius:12px;
+    padding:18px 10px;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.rating-group label i{
+    display:block;
+    color:#c5c5c5;
+    font-size:1.3rem;
+    margin-bottom:8px;
+}
+
+.rating-group label span{
+    font-size:.78rem;
+}
+
+.rating-group input:checked + label{
+    background:#210B2C;
+    color:#fff;
+    border-color:#210B2C;
+}
+
+.rating-group input:checked + label i{
+    color:#fff;
+}
+
+.choice-group{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.choice-option{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.choice-option input{
+    accent-color:#210B2C;
+}
+
+.anonymous-option{
+    background:#f8f6f9;
+    padding:20px;
+    border-radius:14px;
+}
+
+.anonymous-option label{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    cursor:pointer;
+}
+
+.anonymous-option input{
+    margin-top:4px;
+    accent-color:#210B2C;
+}
+
+.anonymous-option strong,
+.anonymous-option small{
+    display:block;
+}
+
+.anonymous-option small{
+    margin-top:5px;
+    color:#777;
+}
+
+.feedback-notice{
+    display:flex;
+    gap:15px;
+    padding:20px;
+    background:#f8f6f9;
+    border-radius:14px;
+    margin-bottom:30px;
+}
+
+.feedback-notice > i{
+    color:#210B2C;
+    font-size:1.3rem;
+}
+
+.feedback-notice strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.feedback-notice p{
+    margin:0;
+    color:#777;
+    font-size:.88rem;
+    line-height:1.6;
+}
+
+.feedback-submit{
+    text-align:center;
+}
+
+.feedback-submit .primary-btn{
+    border:none;
+    cursor:pointer;
+}
+
+.site-header{
+    padding:20px 0;
+    background:#fff;
+    border-bottom:1px solid #eee;
+}
+
+.header-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.back-link{
+    color:#210B2C;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.site-footer{
+    background:#210B2C;
+    color:#fff;
+    padding:30px 0;
+    text-align:center;
+}
+
+.site-footer p{
+    margin:5px 0;
+    color:rgba(255,255,255,.75);
+}
+
+.site-footer a{
+    color:#fff;
+    text-decoration:none;
+}
+/* ===================================
+   MOBILE NAVIGATION
+=================================== */
+
+.site-header{
+    position:relative;
+    z-index:1000;
+}
+
+.header-content{
+    position:relative;
+}
+
+.menu-btn{
+    display:none;
+    border:none;
+    background:transparent;
+    color:#210B2C;
+    font-size:1.4rem;
+    cursor:pointer;
+    padding:8px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+nav a{
+    color:#210B2C;
+    text-decoration:none;
+    font-weight:500;
+    transition:.2s ease;
+}
+
+nav a:hover{
+    color:#6b3c78;
+}
+
+
+/* ===================================
+   FLOATING WHATSAPP
+=================================== */
+
+.whatsapp-float{
+
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:58px;
+    height:58px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#25D366;
+    color:#fff;
+
+    border-radius:50%;
+
+    font-size:1.8rem;
+
+    text-decoration:none;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+
+    z-index:999;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.whatsapp-float:hover{
+
+    transform:translateY(-4px) scale(1.05);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+
+}
+
+.whatsapp-tooltip{
+
+    position:absolute;
+
+    right:70px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    background:#210B2C;
+
+    color:#fff;
+
+    padding:8px 14px;
+
+    border-radius:8px;
+
+    font-size:.8rem;
+
+    white-space:nowrap;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.2s ease;
+
+}
+
+.whatsapp-float:hover .whatsapp-tooltip{
+
+    opacity:1;
+
+}
+
+
+/* ===========================
+   Mobile Navigation
+=========================== */
+
+@media(max-width:900px){
+
+    .header-content{
+
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+
+    }
+
+    .menu-btn{
+
+        display:block;
+
+        order:2;
+
+    }
+
+    nav{
+
+        position:absolute;
+
+        top:100%;
+
+        left:0;
+
+        width:100%;
+
+        background:#fff;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:0;
+
+        padding:10px 25px 20px;
+
+        border-top:1px solid #eee;
+
+        box-shadow:0 15px 30px rgba(0,0,0,.08);
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transform:translateY(-10px);
+
+        transition:
+            opacity .25s ease,
+            transform .25s ease,
+            visibility .25s ease;
+
+    }
+
+    nav.active{
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:translateY(0);
+
+    }
+
+    nav a{
+
+        padding:14px 0;
+
+        border-bottom:1px solid #f0f0f0;
+
+    }
+
+    nav a:last-child{
+
+        border-bottom:none;
+
+    }
+
+    .book-btn{
+
+        display:none;
+
+    }
+
+}
+
+
+/* ===========================
+   Small Phones
+=========================== */
+
+@media(max-width:480px){
+
+    .whatsapp-float{
+
+        width:52px;
+        height:52px;
+
+        right:18px;
+        bottom:18px;
+
+        font-size:1.6rem;
+
+    }
+
+    .whatsapp-tooltip{
+
+        display:none;
+
+    }
 
 }
