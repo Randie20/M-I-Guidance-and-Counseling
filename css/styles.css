@@ -1530,7 +1530,7 @@ nav a:hover{
 
     position:fixed;
 
-    right:25px;
+    left:25px;
     bottom:25px;
 
     width:58px;
@@ -1571,7 +1571,7 @@ nav a:hover{
 
     position:absolute;
 
-    right:70px;
+    left:70px;
 
     top:50%;
 
@@ -1709,7 +1709,7 @@ nav a:hover{
         width:52px;
         height:52px;
 
-        right:18px;
+        left:18px;
         bottom:18px;
 
         font-size:1.6rem;
