@@ -1522,59 +1522,152 @@ nav a:hover{
 }
 
 
+```css
 /* ==========================================
    FLOATING WHATSAPP CONTACT
-   ========================================== */
+========================================== */
 
 .whatsapp-float {
     position: fixed;
-    right: 28px;
-    bottom: 28px;
 
-    width: 58px;
-    height: 58px;
+    right: 26px;
+    bottom: 26px;
+
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0;
+
+    background: #25d366;
+    color: #ffffff;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.16);
+
+    transition:
+        width 0.35s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* ==========================================
+   WHATSAPP ICON
+========================================== */
+
+.whatsapp-icon {
+    width: 56px;
+    height: 56px;
+
+    flex: 0 0 56px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: #25d366;
-    color: #ffffff;
-
-    border-radius: 50%;
-
-    font-size: 29px;
-    text-decoration: none;
-
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
-
-    z-index: 9999;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.whatsapp-float:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.28);
+    font-size: 27px;
 }
 
 
 /* ==========================================
    WHATSAPP LABEL
-   ========================================== */
+========================================== */
 
 .whatsapp-label {
-    display: none;
+    max-width: 0;
+
+    margin-left: 0;
+
+    opacity: 0;
+
+    white-space: nowrap;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    transition:
+        max-width 0.35s ease,
+        margin 0.35s ease,
+        opacity 0.25s ease;
+}
+
+
+/* ==========================================
+   DESKTOP HOVER
+========================================== */
+
+.whatsapp-float:hover {
+    width: 145px;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.20);
+}
+
+.whatsapp-float:hover .whatsapp-label {
+    max-width: 90px;
+
+    margin-left: 2px;
+
+    opacity: 1;
+}
+
+
+/* ==========================================
+   SUBTLE PULSE
+========================================== */
+
+.whatsapp-float::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    border: 1px solid rgba(37, 211, 102, 0.55);
+
+    animation:
+        whatsappPulse 2.8s ease-out infinite;
+
+    pointer-events: none;
+}
+
+@keyframes whatsappPulse {
+
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    70% {
+        transform: scale(1.22);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.22);
+        opacity: 0;
+    }
 }
 
 
 /* ==========================================
    MOBILE
-   ========================================== */
+========================================== */
 
 @media (max-width: 600px) {
 
@@ -1582,59 +1675,70 @@ nav a:hover{
         left: 18px;
         right: auto;
 
-        bottom: 24px;
+        bottom: 18px;
 
-        width: auto;
-        min-width: 156px;
-        height: 50px;
-
-        padding: 0 18px;
-
-        gap: 9px;
-
-        border-radius: 30px;
-
-        font-size: 24px;
+        width: 52px;
+        height: 52px;
 
         box-shadow:
-            0 8px 22px rgba(0, 0, 0, 0.24);
+            0 7px 20px rgba(0, 0, 0, 0.18);
     }
+
+    .whatsapp-icon {
+        width: 52px;
+        height: 52px;
+
+        flex-basis: 52px;
+
+        font-size: 25px;
+    }
+
+    /*
+     * Keep the mobile button compact.
+     * The label is intentionally hidden
+     * so it doesn't cover page content.
+     */
 
     .whatsapp-label {
-        display: inline-block;
-
-        font-size: 0.88rem;
-        font-weight: 700;
-
-        white-space: nowrap;
+        display: none;
     }
 
+    .whatsapp-float:hover {
+        width: 52px;
+
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 9px 24px rgba(0, 0, 0, 0.20);
+    }
 }
 
 
 /* ==========================================
    SMALL PHONES
-   ========================================== */
+========================================== */
 
 @media (max-width: 380px) {
 
     .whatsapp-float {
         left: 14px;
-        bottom: 18px;
+        bottom: 16px;
 
-        min-width: 145px;
-        height: 48px;
-
-        padding: 0 15px;
-
-        font-size: 22px;
+        width: 50px;
+        height: 50px;
     }
 
-    .whatsapp-label {
-        font-size: 0.82rem;
-    }
+    .whatsapp-icon {
+        width: 50px;
+        height: 50px;
 
+        flex-basis: 50px;
+
+        font-size: 23px;
+    }
 }
+```
+
 
 
 /* ===========================
@@ -1730,4 +1834,208 @@ nav a:hover{
 
 }
 
+/* ===================================
+   SESSION RATE CARDS
+=================================== */
 
+.rate-card-section {
+    margin: 0 0 60px;
+}
+
+.rate-card-heading {
+    max-width: 720px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.rate-card-heading > span {
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.rate-card-heading h3 {
+    margin: 12px 0 10px;
+    font-size: 2rem;
+}
+
+.rate-card-heading p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #666;
+}
+
+.rate-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.rate-card {
+    position: relative;
+    padding: 32px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.rate-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    box-shadow: 0 18px 45px rgba(33, 11, 44, 0.12);
+}
+
+.rate-card.selected {
+    border-color: var(--gold);
+    box-shadow:
+        0 0 0 3px rgba(212, 175, 55, 0.12),
+        0 18px 45px rgba(33, 11, 44, 0.12);
+}
+
+.rate-card.selected::after {
+    content: "SELECTED";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 6px 9px;
+    border-radius: 50px;
+    background: #f7f0d9;
+    color: #8a6d19;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.rate-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 22px;
+    border-radius: 16px;
+    background: #f3edf6;
+    color: var(--primary);
+    font-size: 1.4rem;
+}
+
+.rate-card-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.rate-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.55rem;
+}
+
+.rate-card p {
+    min-height: 55px;
+    color: #666;
+    font-size: 0.92rem;
+}
+
+.rate-card-price {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    margin: 25px 0;
+}
+
+.rate-card-price span {
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.rate-card-price strong {
+    color: var(--primary);
+    font-size: 2.45rem;
+    line-height: 1;
+}
+
+.rate-card-price small {
+    color: #777;
+    font-size: 0.78rem;
+}
+
+.rate-card-button {
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid var(--primary);
+    border-radius: 50px;
+    background: #fff;
+    color: var(--primary);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.rate-card-button:hover,
+.rate-card.selected .rate-card-button {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+#bookingSessionInfo,
+#bookingPriceInfo {
+    color: #ddd;
+}
+
+
+/* ===================================
+   RATE CARD / BOOKING RESPONSIVENESS
+=================================== */
+
+@media (max-width: 900px) {
+    .rate-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .rate-card {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .rate-card-section {
+        margin-bottom: 45px;
+    }
+
+    .rate-card-heading h3 {
+        font-size: 1.55rem;
+    }
+
+    .rate-card {
+        padding: 24px 20px;
+    }
+
+    .rate-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .rate-card-price strong {
+        font-size: 2.2rem;
+    }
+
+    .rate-card.selected::after {
+        top: 16px;
+        right: 16px;
+    }
+}

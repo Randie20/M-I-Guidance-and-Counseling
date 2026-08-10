@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const icon = menuBtn.querySelector("i");
 
             if (icon) {
-
                 icon.classList.toggle(
                     "fa-bars",
                     !isOpen
@@ -38,9 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "fa-xmark",
                     isOpen
                 );
-
             }
-
         });
 
 
@@ -67,15 +64,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 const icon = menuBtn.querySelector("i");
 
                 if (icon) {
-
                     icon.classList.remove("fa-xmark");
-
                     icon.classList.add("fa-bars");
-
                 }
-
             });
-
         });
 
 
@@ -103,17 +95,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 const icon = menuBtn.querySelector("i");
 
                 if (icon) {
-
                     icon.classList.remove("fa-xmark");
-
                     icon.classList.add("fa-bars");
-
                 }
-
             }
-
         });
-
     }
 
 
@@ -149,6 +135,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     item.classList.remove("active");
 
+                    const itemAnswer =
+                        item.querySelector(".faq-answer");
+
+                    if (itemAnswer) {
+                        itemAnswer.style.maxHeight = null;
+                    }
                 });
 
 
@@ -159,9 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .forEach(function (item) {
 
                     item.classList.remove("fa-minus");
-
                     item.classList.add("fa-plus");
-
                 });
 
 
@@ -171,18 +161,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 faqItem.classList.add("active");
 
-                if (icon) {
-
-                    icon.classList.remove("fa-plus");
-
-                    icon.classList.add("fa-minus");
-
+                if (answer) {
+                    answer.style.maxHeight =
+                        answer.scrollHeight + "px";
                 }
 
+                if (icon) {
+                    icon.classList.remove("fa-plus");
+                    icon.classList.add("fa-minus");
+                }
             }
-
         });
-
     });
 
 
@@ -197,19 +186,216 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const today = new Date();
 
-        const year = today.getFullYear();
+        const year =
+            today.getFullYear();
 
-        const month = String(
-            today.getMonth() + 1
-        ).padStart(2, "0");
+        const month =
+            String(today.getMonth() + 1)
+                .padStart(2, "0");
 
-        const day = String(
-            today.getDate()
-        ).padStart(2, "0");
+        const day =
+            String(today.getDate())
+                .padStart(2, "0");
 
         dateInput.min =
             `${year}-${month}-${day}`;
+    }
 
+
+    /* ===========================
+       SESSION RATE SELECTION
+    =========================== */
+
+    const rateButtons =
+        document.querySelectorAll(".rate-card-button");
+
+    const sessionType =
+        document.getElementById("sessionType");
+
+    const sessionPrice =
+        document.getElementById("sessionPrice");
+
+    const selectedSessionInfo =
+        document.getElementById("bookingSessionInfo");
+
+    const selectedPriceInfo =
+        document.getElementById("bookingPriceInfo");
+
+    const rateCards =
+        document.querySelectorAll(".rate-card");
+
+
+    /*
+     * Updates the booking form whenever
+     * a counselling session is selected.
+     */
+
+    function updateSelectedSession(
+        session,
+        price
+    ) {
+
+        /* Update hidden/form fields */
+
+        if (sessionType) {
+            sessionType.value = session;
+        }
+
+        if (sessionPrice) {
+            sessionPrice.value = price;
+        }
+
+
+        /* Update booking information */
+
+        if (selectedSessionInfo) {
+            selectedSessionInfo.textContent =
+                session;
+        }
+
+        if (selectedPriceInfo) {
+            selectedPriceInfo.textContent =
+                `KES ${Number(price).toLocaleString()}`;
+        }
+
+
+        /* Remove previous selected state */
+
+        rateCards.forEach(function (card) {
+            card.classList.remove("selected");
+        });
+
+
+        /* Highlight selected rate card */
+
+        const selectedButton =
+            Array.from(rateButtons).find(
+                function (button) {
+                    return (
+                        button.dataset.session ===
+                        session
+                    );
+                }
+            );
+
+
+        if (selectedButton) {
+
+            const selectedCard =
+                selectedButton.closest(".rate-card");
+
+            if (selectedCard) {
+                selectedCard.classList.add("selected");
+            }
+        }
+    }
+
+
+    /* ===========================
+       RATE CARD BUTTONS
+    =========================== */
+
+    rateButtons.forEach(function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                const session =
+                    button.dataset.session;
+
+                const price =
+                    button.dataset.price;
+
+
+                updateSelectedSession(
+                    session,
+                    price
+                );
+
+
+                /*
+                 * Move the user to the
+                 * booking form after
+                 * selecting a session.
+                 */
+
+                const bookingSection =
+                    document.getElementById("booking");
+
+                if (bookingSection) {
+
+                    bookingSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
+            }
+        );
+    });
+
+
+    /* ===========================
+       SESSION DROPDOWN
+    =========================== */
+
+    if (sessionType) {
+
+        sessionType.addEventListener(
+            "change",
+            function () {
+
+                const session =
+                    sessionType.value;
+
+                let price = "";
+
+
+                if (
+                    session ===
+                    "Zoom Therapy Session"
+                ) {
+                    price = "1500";
+                }
+
+
+                if (
+                    session ===
+                    "House Call Counselling Session"
+                ) {
+                    price = "3000";
+                }
+
+
+                if (session) {
+
+                    updateSelectedSession(
+                        session,
+                        price
+                    );
+
+                } else {
+
+                    if (sessionPrice) {
+                        sessionPrice.value = "";
+                    }
+
+                    if (selectedSessionInfo) {
+                        selectedSessionInfo.textContent =
+                            "Choose a session above";
+                    }
+
+                    if (selectedPriceInfo) {
+                        selectedPriceInfo.textContent =
+                            "Select a session to see the fee";
+                    }
+
+                    rateCards.forEach(function (card) {
+                        card.classList.remove("selected");
+                    });
+                }
+            }
+        );
     }
 
 
@@ -217,36 +403,43 @@ document.addEventListener("DOMContentLoaded", function () {
        SMOOTH SCROLLING
     =========================== */
 
-    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(function (link) {
 
-        link.addEventListener("click", function (event) {
+            link.addEventListener(
+                "click",
+                function (event) {
 
-            const targetId =
-                link.getAttribute("href");
+                    const targetId =
+                        link.getAttribute("href");
 
-            if (
-                !targetId ||
-                targetId === "#"
-            ) {
-                return;
-            }
 
-            const target =
-                document.querySelector(targetId);
+                    if (
+                        !targetId ||
+                        targetId === "#"
+                    ) {
+                        return;
+                    }
 
-            if (target) {
 
-                event.preventDefault();
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
 
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
 
-            }
+                    if (target) {
 
+                        event.preventDefault();
+
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                    }
+                }
+            );
         });
-
-    });
 
 });

@@ -11,11 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
-<style>
-.site-header{position:relative;z-index:1000}.header-content{display:flex;align-items:center;justify-content:space-between;gap:24px}.site-header .logo{text-decoration:none;flex-shrink:0}.site-header #mainNav{display:flex;align-items:center;justify-content:center;gap:28px;flex:1}.site-header #mainNav a{text-decoration:none}.site-header .menu-btn{display:none;border:0;background:transparent;cursor:pointer;font-size:1.45rem;padding:8px;color:inherit}.whatsapp-float{position:fixed;right:28px;bottom:28px;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#25D366;color:#fff;text-decoration:none;font-size:30px;z-index:9999;box-shadow:0 10px 30px rgba(0,0,0,.20);transition:transform .25s,box-shadow .25s}.whatsapp-float:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 14px 34px rgba(0,0,0,.25)}.whatsapp-label{display:none}.whatsapp-tooltip{position:absolute;right:70px;white-space:nowrap;background:#21102b;color:#fff;padding:9px 13px;border-radius:8px;font-size:.78rem;font-weight:600;opacity:0;pointer-events:none;transform:translateX(8px);transition:.2s}.whatsapp-float:hover .whatsapp-tooltip{opacity:1;transform:translateX(0)}
-@media(max-width:900px){.site-header .header-content{min-height:76px}.site-header .menu-btn{display:inline-flex!important;align-items:center;justify-content:center;order:3}.site-header .book-btn{display:none!important}.site-header #mainNav{position:absolute;top:100%;left:0;right:0;width:100%;display:none!important;flex-direction:column;align-items:stretch;gap:0;padding:16px 22px 22px;background:#fff;border-top:1px solid rgba(0,0,0,.08);box-shadow:0 18px 35px rgba(0,0,0,.12)}.site-header #mainNav.active{display:flex!important}.site-header #mainNav a{display:block;width:100%;padding:13px 4px}.site-header .logo{margin-right:auto}.whatsapp-float{right:16px;bottom:88px;width:auto;min-width:126px;height:52px;padding:0 17px;border-radius:28px;font-size:25px;gap:9px;box-shadow:0 8px 24px rgba(0,0,0,.22)}.whatsapp-label{display:inline;font-size:.88rem;font-weight:700;line-height:1}.whatsapp-tooltip{display:none}}
-@media(max-width:600px){.site-header .header-content{padding-left:18px;padding-right:18px}.site-header .logo{font-size:1.15rem}.site-header .logo span{font-size:.68rem}#booking .booking-wrapper,#booking .booking-form,#booking form{width:100%}#booking input,#booking select,#booking textarea{max-width:100%;box-sizing:border-box}}
-</style>
+
 
 </head>
 
@@ -85,12 +81,85 @@
     </div>
 </section>
 
-<section id="booking" class="booking"><div class="container"><div class="section-title"><span>Book a Session</span><h2>Schedule Your Counseling Session</h2><p>Complete the form below to request a confidential Zoom counseling session. We'll review your request and contact you with confirmation and Zoom meeting details.</p></div><div class="booking-wrapper">
-<div class="booking-info"><h3>Session Information</h3><div class="booking-item"><i class="fa-solid fa-video"></i><div><h4>Session Format</h4><p>Online via Zoom</p></div></div><div class="booking-item"><i class="fa-solid fa-clock"></i><div><h4>Duration</h4><p>Approximately 45–60 Minutes</p></div></div><div class="booking-item"><i class="fa-solid fa-lock"></i><div><h4>Confidential</h4><p>Your information is handled with care and confidentiality.</p></div></div><div class="booking-item"><i class="fa-solid fa-envelope"></i><div><h4>Email</h4><p>mwangemaina22@gmail.com</p></div></div></div>
+<section id="booking" class="booking"><div class="container"><div class="section-title"><span>Book a Session</span><h2>Schedule Your Counseling Session</h2><p>Complete the form below to request a confidential Zoom counseling session. We'll review your request and contact you with confirmation and Zoom meeting details.</p></div><div class="rate-card-section">
+    <div class="rate-card-heading">
+        <span>Session Rates</span>
+        <h3>Choose the counselling option that suits you</h3>
+        <p>Select a session below and the booking form will automatically update with your chosen service and fee.</p>
+    </div>
+
+    <div class="rate-cards">
+
+        <article class="rate-card" data-session-card="zoom">
+            <div class="rate-card-icon">
+                <i class="fa-solid fa-video"></i>
+            </div>
+
+            <span class="rate-card-label">ONLINE SESSION</span>
+
+            <h3>Zoom Therapy Session</h3>
+
+            <p>
+                A private one-on-one counselling session conducted
+                conveniently through Zoom.
+            </p>
+
+            <div class="rate-card-price">
+                <span>KES</span>
+                <strong>1,500</strong>
+                <small>/ session</small>
+            </div>
+
+            <button
+                type="button"
+                class="rate-card-button"
+                data-session="Zoom Therapy Session"
+                data-price="1500"
+            >
+                Select Zoom Session
+            </button>
+        </article>
+
+        <article class="rate-card" data-session-card="house">
+            <div class="rate-card-icon">
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+            <span class="rate-card-label">IN-PERSON SESSION</span>
+
+            <h3>House Call Counselling Session</h3>
+
+            <p>
+                A personalised counselling session conducted
+                in the comfort and privacy of your home.
+            </p>
+
+            <div class="rate-card-price">
+                <span>KES</span>
+                <strong>3,000</strong>
+                <small>/ session</small>
+            </div>
+
+            <button
+                type="button"
+                class="rate-card-button"
+                data-session="House Call Counselling Session"
+                data-price="3000"
+            >
+                Select House Call
+            </button>
+        </article>
+
+    </div>
+</div>
+
+<div class="booking-wrapper">
+<div class="booking-info"><h3>Session Information</h3><div class="booking-item"><i class="fa-solid fa-calendar-check"></i><div><h4>Selected Session</h4><p id="bookingSessionInfo">Choose a session above</p></div></div><div class="booking-item"><i class="fa-solid fa-tag"></i><div><h4>Session Fee</h4><p id="bookingPriceInfo">Select a session to see the fee</p></div></div><div class="booking-item"><i class="fa-solid fa-lock"></i><div><h4>Confidential</h4><p>Your information is handled with care and confidentiality.</p></div></div><div class="booking-item"><i class="fa-solid fa-envelope"></i><div><h4>Email</h4><p>mwangemaina22@gmail.com</p></div></div></div>
 <div class="booking-form"><form name="therapy-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank-you.html"><input type="hidden" name="form-name" value="therapy-booking"><p hidden><label>Don't fill this out:<input name="bot-field"></label></p>
 <div class="form-row"><div class="form-group"><label for="name">Full Name</label><input id="name" type="text" name="name" autocomplete="name" required></div><div class="form-group"><label for="email">Email Address</label><input id="email" type="email" name="email" autocomplete="email" required></div></div>
 <div class="form-row"><div class="form-group"><label for="phone">Phone Number</label><input id="phone" type="tel" name="phone" autocomplete="tel" required></div><div class="form-group"><label for="date">Preferred Date</label><input id="date" type="date" name="date" required></div></div>
-<div class="form-group"><label for="time">Preferred Time</label><input id="time" type="time" name="time" required></div>
+<div class="form-row"><div class="form-group"><label for="time">Preferred Time</label><input id="time" type="time" name="time" required></div><div class="form-group"><label for="sessionType">Session Type</label><select id="sessionType" name="session_type" required><option value="">Select a session</option><option value="Zoom Therapy Session">Zoom Therapy Session — KES 1,500</option><option value="House Call Counselling Session">House Call Counselling Session — KES 3,000</option></select></div></div>
+<input type="hidden" id="sessionPrice" name="session_price" value="">
 <div class="form-group"><label for="reason">Reason for Session</label><select id="reason" name="reason" required><option value="">Select One</option><option>Personal Guidance</option><option>Stress Support</option><option>Relationship Guidance</option><option>Family Guidance</option><option>Youth Mentorship</option><option>Spiritual Guidance</option><option>Other</option></select></div>
 <div class="form-group"><label for="remarks">Remarks</label><textarea id="remarks" rows="5" name="remarks" placeholder="Share anything you'd like us to know before your session..."></textarea></div>
 <div class="checkbox-group"><input type="checkbox" id="agree" name="confidentiality-agreement" value="agreed" required><label for="agree">I have read and agree to the <a href="confidentiality.html">Confidentiality Agreement</a>.</label></div>
@@ -104,10 +173,25 @@
 <section id="contact" class="contact"><div class="container"><div class="section-title"><span>Contact</span><h2>Get In Touch</h2><p>Have a question before booking? Feel free to contact us.</p></div><div class="contact-grid"><div class="contact-card"><i class="fa-solid fa-phone"></i><h3>Phone</h3><p>+254 790 331 742</p></div><div class="contact-card"><i class="fa-solid fa-envelope"></i><h3>Email</h3><p>mwangemaina22@gmail.com</p></div><div class="contact-card"><i class="fa-solid fa-video"></i><h3>Zoom Sessions</h3><p>Available by Appointment</p></div></div></div></section>
 </main>
 <footer><div class="container footer-content"><div><h3>M & I Guidance & Counseling</h3><p>A safe and confidential environment where healing, hope, and personal growth begin with one conversation.</p></div><div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#booking">Book Session</a><a href="feedback.html">Private Feedback</a><a href="confidentiality.html">Confidentiality</a></div></div><hr><p class="copyright">© 2026 M & I Guidance & Counseling. All Rights Reserved.</p></footer>
-<a href="https://wa.me/254790331742?text=Hello%20Pst%20Philip%2C%20I%27d%20like%20to%20inquire%20about%20a%20counseling%20session." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with M & I Guidance & Counseling on WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span class="whatsapp-label">WhatsApp</span><span class="whatsapp-tooltip">Chat with us</span></a>
+
+<a
+    href="https://wa.me/254790331742?text=Hello%20Pst%20Philip%2C%20I%27d%20like%20to%20inquire%20about%20a%20counseling%20session"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with M & I Guidance & Counseling on WhatsApp"
+>
+    <span class="whatsapp-icon">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </span>
+
+    <span class="whatsapp-label">
+        Chat with us
+    </span>
+</a>
+
+
 <script src="js/script.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded",function(){const b=document.getElementById("menuBtn"),n=document.getElementById("mainNav");if(!b||!n)return;b.addEventListener("click",function(){const o=n.classList.toggle("active");b.setAttribute("aria-expanded",String(o));b.setAttribute("aria-label",o?"Close navigation menu":"Open navigation menu");const i=b.querySelector("i");if(i){i.classList.toggle("fa-bars",!o);i.classList.toggle("fa-xmark",o)}});n.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{if(innerWidth<=900){n.classList.remove("active");b.setAttribute("aria-expanded","false");const i=b.querySelector("i");if(i){i.classList.add("fa-bars");i.classList.remove("fa-xmark")}}}));addEventListener("resize",()=>{if(innerWidth>900){n.classList.remove("active");b.setAttribute("aria-expanded","false")}});const d=document.getElementById("date");if(d){const x=new Date();d.min=`${x.getFullYear()}-${String(x.getMonth()+1).padStart(2,"0")}-${String(x.getDate()).padStart(2,"0")}`}});
-</script>
+
 </body>
 </html>
